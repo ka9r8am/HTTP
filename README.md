@@ -3,9 +3,8 @@
 A minimal HTTP server in C that handles **GET** and **POST** requests.
 
 ## Features
-- Supports HTTP GET and POST methods.
+- Supports HTTP GET method.
 - Simple HTML responses.
-- Echoes POST request data.
 
 ## Prerequisites
 - **GCC** or any C compiler.
