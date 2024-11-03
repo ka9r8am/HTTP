@@ -22,8 +22,11 @@ A minimal HTTP server in C that handles **GET** and **POST** requests.
    ```bash
    make http_server
    ```
-
-3. **Run:**
+3. **Permissions:**
+4. ```bash
+   chmod -x http_server
+   ````
+5. **Run:**
    ```bash
    ./http_server
    ```
