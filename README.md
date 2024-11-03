@@ -14,13 +14,13 @@ A minimal HTTP server in C that handles **GET** and **POST** requests.
 
 1. **Clone the repo:**
    ```bash
-   git clone <repository-url>
-   cd simple-http-server
+   git clone https://github.com/ka9r8am/HTTP
+   cd HTTP/HTTP_Server
    ```
 
 2. **Compile:**
    ```bash
-   gcc -o http_server http_server.c
+   make http_server
    ```
 
 3. **Run:**
@@ -31,21 +31,11 @@ A minimal HTTP server in C that handles **GET** and **POST** requests.
      ```bash
      curl http://localhost:8080
      ```
-   - For **POST** request:
-     ```bash
-     curl -X POST -d "data=hello" http://localhost:8080
-     ```
-
 ## Example Response
 
 **GET**:
 ```html
 <html><body><h1>GET request received</h1></body></html>
-```
-
-**POST**:
-```html
-<html><body><h1>POST request received</h1><p>Data: hello</p></body></html>
 ```
 
 ## Improvements
