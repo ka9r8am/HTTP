@@ -1,6 +1,6 @@
 # Simple HTTP Server in C
 
-A minimal HTTP server in C that handles **GET** and **POST** requests.
+A minimal HTTP server in C that handles **GET** requests.
 
 ## Features
 - Supports HTTP GET method.
