@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h> 
+#include <string.h>
 
 #include <sys/socket.h>
 #include <sys/types.h>
 
 #include <netinet/in.h>
-
-int domain = AF_INET; // IPv4
-int type = SOCK_STREAM; // TCP
-int protocol = 0; // system chooses based on type, domain.
+#include <arpa/inet.h>
 
 
 int main(){
@@ -21,9 +19,9 @@ int main(){
 
 	// define the server address.
 	struct sockaddr_in server_address;
-	server_address.sin_family = domain; // IPv4
+	server_address.sin_family = AF_INET; // IPv4
 	server_address.sin_port = htons(9002);
-	server_address.sin_addr.s_addr = INADDR_ANY; // 0.0.0.0
+	server_address.sin_addr.s_addr = inet_addr("192.168.1.60"); // local host.
 
 	// bind the socket to our specified IP and port. 
 	bind(server_socket, (struct sockaddr*) &server_address, sizeof(server_address));

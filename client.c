@@ -5,6 +5,7 @@
 #include <sys/types.h>
 
 #include <netinet/in.h>
+#include <arpa/inet.h>
 
 int domain = AF_INET; // IPv4
 int type = SOCK_STREAM; // TCP
@@ -22,8 +23,8 @@ int main(){
 	// specify an address for the socket.
 	struct sockaddr_in server_address;
 	server_address.sin_family = domain; // IPv4
-	server_address.sin_port = htons(9002);
-	server_address.sin_addr.s_addr = INADDR_ANY; // 0.0.0.0
+	server_address.sin_port = htons(8002);
+	server_address.sin_addr.s_addr = inet_addr("192.168.1.60"); // 0.0.0.0
 
 	// strat tho connection.
 	int conection_status = connect(network_socket, (struct sockaddr *) &server_address, sizeof(server_address));
@@ -37,7 +38,7 @@ int main(){
 	}
 
 	//recive the data from the server.
-	char server_response[256];
+	char server_response[2048];
 	int bytes_recv = recv(network_socket, &server_response, sizeof(server_response), 0);
 	
 	if (bytes_recv < 0){
